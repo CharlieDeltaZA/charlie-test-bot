@@ -25,7 +25,7 @@ async def on_message(message):                                          # Indiv 
 
 @client.event
 async def on_message(message):      # U+1F643 
-   emoji = '👍'                                                    # This will probably loop / Send on every message ?
+   emoji = ':upside_down:'                                                    # This will probably loop / Send on every message ?
    await client.add_reaction(message, emoji)
 
 
