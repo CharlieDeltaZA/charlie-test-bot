@@ -1,4 +1,5 @@
 import discord
+import credentials
 
 client = discord.Client()
 
@@ -19,4 +20,4 @@ async def on_ready():
    print(client.user.id)
    print('-----')
 
-client.run('token')
+client.run(credentials.token)
