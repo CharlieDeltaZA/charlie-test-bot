@@ -25,7 +25,7 @@ async def on_message(message):                                          # Indiv 
 
 @client.event
 async def on_message(message):
-   if message.content == 'How do you feel, Bot?'
+   if message.system_content == 'How do you feel, Bot?'
       emoji = '🙃'                                                    # 
       await client.add_reaction(message, emoji)
 
