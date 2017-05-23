@@ -27,7 +27,7 @@ async def on_message(message):                                          # Indiv 
 async def on_message(message):
 #   if message.content.startswith('How do you feel, Bot?'):           # FUCKING SYNTAX GOD DAMNIT
    if message.content == 'How do you feel, Bot?':
-      emoji = '🙃'                                                    # erm
+      emoji = '\N{UPSIDE-DOWN FACE}'                                                    # erm
       await client.add_reaction(message, emoji)
 
 
