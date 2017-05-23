@@ -32,12 +32,15 @@ async def on_member_join(member):
    fmt = 'Welcome {0.mention} to {1.name}!'
    await client.send_message(server, fmt.format(member, server))
 
+        
 
-@client.event
+@client.event                                                           # Debug text
 async def on_ready():
    print('Logged in as')
    print(client.user.name)
    print(client.user.id)
    print('-----')
+   await client.change_presence(game=discord.Game(name='playing with code'))  # ??? 
 
-client.run(credentials.Token)
+
+client.run(credentials.Token)                                           # Run the client with the token
