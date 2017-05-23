@@ -19,7 +19,7 @@ async def on_message(message):
 
    if message.content.startswith('!bbb'):
       msg = 'Bish Bash Bosh'
-      await client.send_message(message.channel, msg, true)
+      await client.send_message(message.channel, msg, tts=True)
 
 # @client.event
 # async def on_message(message):
