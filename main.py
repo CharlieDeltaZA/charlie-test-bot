@@ -24,8 +24,9 @@ async def on_message(message):                                          # Indiv 
       await client.send_message(message.channel, msg, tts=True)
 
 @client.event
-async def on_message(message):      # U+1F643                           # This will probably loop / Send on every message ?
-   await client.add_reaction(message, U+1F643)
+async def on_message(message):      # U+1F643 
+   emoji = 'U+1F643'                                                    # This will probably loop / Send on every message ?
+   await client.add_reaction(message, emoji)
 
 
 @client.event                                                           # Welcome new members to server
