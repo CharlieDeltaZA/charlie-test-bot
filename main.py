@@ -40,7 +40,7 @@ async def on_ready():
    print(client.user.name)
    print(client.user.id)
    print('-----')
-   await client.change_presence(game=discord.Game(name='playing with code'))  # ??? 
+   await client.change_presence(game=discord.Game(name='with code'))  # Dis works 
 
 
 client.run(credentials.Token)                                           # Run the client with the token
