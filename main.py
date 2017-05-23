@@ -17,6 +17,10 @@ async def on_message(message):
       msg = 'Pong!'
       await client.send_message(message.channel, msg)
 
+   if message.content.startswith('!bbb'):
+      msg = 'Bish Bash Bosh'
+      await client.send_message(message.channel, msg, true)
+
 # @client.event
 # async def on_message(message):
 
