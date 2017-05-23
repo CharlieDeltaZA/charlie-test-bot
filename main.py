@@ -10,7 +10,7 @@ async def on_message(message):
       return
    # Our test message params
    if message.content.startswith('!hello'):
-      msg = 'Hello {0.author.mention}' #.format(message)
+      msg = 'Hello {0.author.mention}'.format(message)
       await client.send_message(message.channel, msg)
 
    if message.content.startswith('!ping'):
