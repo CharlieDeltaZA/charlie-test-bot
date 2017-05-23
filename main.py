@@ -23,8 +23,10 @@ async def on_message(message):                                          # Indiv 
       msg = 'Bish Bash Bosh!'
       await client.send_message(message.channel, msg, tts=True)
 
-# @client.event
-# async def on_message(message):
+@client.event
+async def on_message(message):      # U+1F643                           # This will probably loop / Send on every message ?
+   await client.add_reaction(message, U+1F643)
+
 
 @client.event                                                           # Welcome new members to server
 async def on_member_join(member):
@@ -40,7 +42,7 @@ async def on_ready():
    print(client.user.name)
    print(client.user.id)
    print('-----')
-   await client.change_presence(game=discord.Game(name='with code'))  # Dis works 
+   await client.change_presence(game=discord.Game(name='with code'))   # Dis works 
 
 
 client.run(credentials.Token)                                           # Run the client with the token
