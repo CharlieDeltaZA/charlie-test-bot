@@ -3,10 +3,10 @@ import credentials
 
 client = discord.Client()
 
-prefix = '!'
+prefix = '!'                                                            # Try make this adjustable somehow?
 
 @client.event
-async def on_message(message):
+async def on_message(message):                                          # Indiv @events for every message command?
    # Bot must not respond to itself
    if message.author == client.user:
       return
