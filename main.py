@@ -20,4 +20,4 @@ async def on_ready():
    print(client.user.id)
    print('-----')
 
-client.run(credentials.token)
+client.run(credentials.Token)
