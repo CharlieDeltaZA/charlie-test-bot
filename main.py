@@ -49,7 +49,7 @@ async def on_member_join(member):
 
 @client.event                                                           # Debug text
 async def on_ready():
-   DateTime = datetime.date.now()
+   DateTime = datetime.datetime.now()
    print('Logged in as')
    print(client.user.name)
    print(client.user.id)
