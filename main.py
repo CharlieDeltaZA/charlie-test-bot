@@ -1,6 +1,7 @@
 import discord
 import credentials
 import commands
+import datetime                                                         # For debugging `on_ready`
 
 client = discord.Client()
 
@@ -41,16 +42,18 @@ async def on_message(message):                                       # Send a PM
 @client.event                                                           # Welcome new members to server
 async def on_member_join(member):
    server = member.server
-   fmt = 'Welcome {0.mention} to {1.name}!'
-   await client.send_message(server, fmt.format(member, server))
+   msg = 'Welcome {0.mention} to {1.name}!'
+   await client.send_message(server, msg.format(member, server))
 
         
 
 @client.event                                                           # Debug text
 async def on_ready():
+   DateTime = datetime.date.now()
    print('Logged in as')
    print(client.user.name)
    print(client.user.id)
+   print(str(DateTime))                                                 # Debugging
    print('-----')
    await client.change_presence(game=discord.Game(name='with code'))   # Dis works 
 
