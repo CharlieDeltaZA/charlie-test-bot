@@ -24,9 +24,10 @@ async def on_message(message):                                          # Indiv 
       await client.send_message(message.channel, msg, tts=True)
 
 @client.event
-async def on_message(message):      # U+1F643 
-   emoji = '🙃'                                                    # This will probably loop / Send on every message ?
-   await client.add_reaction(message, emoji)
+async def on_message(message):
+   if message.content == 'How do you feel, Bot?'
+      emoji = '🙃'                                                    # 
+      await client.add_reaction(message, emoji)
 
 
 @client.event                                                           # Welcome new members to server
