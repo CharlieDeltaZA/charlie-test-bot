@@ -1,3 +1,5 @@
+# Main file for charlie-test-bot
+
 import discord
 import credentials
 import commands
@@ -53,8 +55,8 @@ async def on_ready():
    print('Logged in as')
    print(client.user.name)
    print(client.user.id)
-   print(str(DateTime))                                                 # Debugging
-   print('-----')
+   print(DateTime.strftime("%Y-%m-%d %H:%M:%S"))                                                 # Debugging
+   print('----------')
    await client.change_presence(game=discord.Game(name='with code'))   # Dis works 
 
 
