@@ -34,11 +34,11 @@ async def on_message(message):
       emoji = '\N{UPSIDE-DOWN FACE}'                                                    # erm
       await client.add_reaction(message, emoji)
 
-'''@client.event
+@client.event
 async def on_message(message):                                       # Send a PM to the user with a list of commands sourced elsewhere & formatted
-   if message.content.startswith(prefix + 'help'):
+   if message.content.startswith('!help'):
       msg = commands.Help
-      await client.send_message(message.author, msg)'''
+      await client.send_message(message.author, msg)
 
 
 @client.event                                                           # Welcome new members to server
