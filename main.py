@@ -7,7 +7,7 @@ import datetime                                                         # For de
 
 client = discord.Client()
 
-prefix = '!'                                                            # Try make this adjustable somehow?
+# prefix = '!'                                                            # Try make this adjustable somehow?
 
 @client.event
 async def on_message(message):                                          # Indiv @events for every message command?
@@ -15,15 +15,15 @@ async def on_message(message):                                          # Indiv 
    if message.author == client.user:
       return
    # Our test message params
-   if message.content.startswith(prefix + 'hello'):                     # Greetings
+   if message.content.startswith('!hello'):                     # Greetings
       msg = 'Hello {0.author.mention}!'.format(message)
       await client.send_message(message.channel, msg)
 
-   if message.content.startswith(prefix + 'ping'):                      # C'mon. This must be here.
+   if message.content.startswith('!ping'):                      # C'mon. This must be here.
       msg = 'Pong!'
       await client.send_message(message.channel, msg)
 
-   if message.content.startswith(prefix + 'bbb'):                       # Why does this exist? I couldn't tell you really...
+   if message.content.startswith('!bbb'):                       # Why does this exist? I couldn't tell you really...
       msg = 'Bish Bash Bosh!'
       await client.send_message(message.channel, msg, tts=True)
 
