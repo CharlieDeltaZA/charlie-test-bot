@@ -6,6 +6,7 @@ import commands
 import datetime
 
 client = discord.Client()
+server = discord.Server()
 
 @client.event
 async def on_message(message):                                          # Indiv @events for every message command?
