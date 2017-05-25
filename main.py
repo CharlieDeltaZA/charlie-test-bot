@@ -1,5 +1,7 @@
 # Main file for charlie-test-bot
 
+# No longer in use - 25/05/2017
+
 import discord
 import credentials
 #import commands

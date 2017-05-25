@@ -2,6 +2,8 @@
 
 import discord
 import credentials
+import commands
+import datetime
 
 client = discord.Client()
 
@@ -23,22 +25,34 @@ async def on_message(message):                                          # Indiv 
       msg = 'Bish Bash Bosh!'
       await client.send_message(message.channel, msg, tts=True)
 
+   if message.content == 'How do you feel, Bot?':
+      emoji = '\N{UPSIDE-DOWN FACE}'                                                    # erm
+      await client.add_reaction(message, emoji)
+
+   if message.content.startswith('!help'):								# Send a PM to the user with a list of commands sourced elsewhere & formatted
+      msg = commands.Help
+      await client.send_message(message.author, msg)
+
 #@client.event
 #async def on_message(message):
 #   if message.content.startswith('How do you feel, Bot?'):           # FUCKING SYNTAX GOD DAMNIT
-#   if message.content == 'How do you feel, Bot?':
-#      emoji = '\N{UPSIDE-DOWN FACE}'                                                    # erm
-#      await client.add_reaction(message, emoji)
+
+@client.event                                                           # Welcome new members to server
+async def on_member_join(member):
+   server = member.server
+   msg = 'Welcome {0.mention} to {1.name}!'
+   await client.send_message(server, msg.format(member, server))
+   
 
 @client.event                                                           # Debug text
 async def on_ready():
-   # DateTime = datetime.datetime.now()
+   DateTime = datetime.datetime.now()
    print('Logged in as')
    print(client.user.name)
    print(client.user.id)
-   # print(DateTime.strftime("%Y-%m-%d %H:%M:%S"))                                                 # Debugging
+   print(DateTime.strftime("%Y-%m-%d %H:%M:%S"))                                                 # Debugging
    print('----------')
-   # await client.change_presence(game=discord.Game(name='with code'))   # Dis works 
+   await client.change_presence(game=discord.Game(name='with code'))   # Dis works 
 
 
 client.run(credentials.Token)                                           # Run the client with the token
