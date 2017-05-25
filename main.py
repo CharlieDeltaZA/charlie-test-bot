@@ -29,14 +29,19 @@ async def on_message(message):                                          # Indiv 
       msg = 'Bish Bash Bosh!'
       await client.send_message(message.channel, msg, tts=True)
 
+   #if message.content == 'How do you feel, Bot?':
+   #   emoji = '\N{UPSIDE-DOWN FACE}'                                                    # erm
+   #   await client.add_reaction(message, emoji)
+
+@client.event
+async def on_message(message):
+#   if message.content.startswith('How do you feel, Bot?'):           # FUCKING SYNTAX GOD DAMNIT
+   if message.author == client.user:
+      return
+   
    if message.content == 'How do you feel, Bot?':
       emoji = '\N{UPSIDE-DOWN FACE}'                                                    # erm
-      await client.add_reaction(message, emoji)
-
-#@client.event
-#async def on_message(message):
-#   if message.content.startswith('How do you feel, Bot?'):           # FUCKING SYNTAX GOD DAMNIT
-   
+      await client.add_reaction(message, emoji)   
 
 #@client.event
 #async def on_message(message):                                       # Send a PM to the user with a list of commands sourced elsewhere & formatted
