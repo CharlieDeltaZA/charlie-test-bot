@@ -15,6 +15,21 @@ async def on_message(message):                                          # Indiv 
       msg = 'Hello {0.author.mention}!'.format(message)
       await client.send_message(message.channel, msg)
 
+   if message.content.startswith('!ping'):                      # C'mon. This must be here.
+      msg = 'Pong!'
+      await client.send_message(message.channel, msg)
+
+   if message.content.startswith('!bbb'):                       # Why does this exist? I couldn't tell you really...
+      msg = 'Bish Bash Bosh!'
+      await client.send_message(message.channel, msg, tts=True)
+
+@client.event
+async def on_message(message):
+#   if message.content.startswith('How do you feel, Bot?'):           # FUCKING SYNTAX GOD DAMNIT
+   if message.content == 'How do you feel, Bot?':
+      emoji = '\N{UPSIDE-DOWN FACE}'                                                    # erm
+      await client.add_reaction(message, emoji)
+
 @client.event                                                           # Debug text
 async def on_ready():
    # DateTime = datetime.datetime.now()
