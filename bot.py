@@ -25,13 +25,19 @@ async def on_message(message):                                          # Indiv 
       msg = 'Bish Bash Bosh!'
       await client.send_message(message.channel, msg, tts=True)
 
-   if message.content == 'How do you feel, Bot?':
+   if message.content == 'How do you feel, Bot?':						#FeelsBadMan
       emoji = '\N{UPSIDE-DOWN FACE}'                                                    # erm
       await client.add_reaction(message, emoji)
 
    if message.content.startswith('!help'):								# Send a PM to the user with a list of commands sourced elsewhere & formatted
       msg = commands.Help
       await client.send_message(message.author, msg)
+
+   if message.content.startswith('!lul'):
+   	msg_og = '<:NotLikeThis:314339829385265153>'
+   	msg = (msg_og + '\n') * 5
+   	await client.send_message(message.channel, msg)
+   	
 
 #@client.event
 #async def on_message(message):
