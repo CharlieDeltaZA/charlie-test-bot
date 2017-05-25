@@ -40,7 +40,7 @@ async def on_message(message):                                          # Indiv 
 
    if message.content.startswith('James is a noob'):									# Wonder if this will work?
    #	usr = await server.get_member_named('FlamingPalmPunch')
-   	msg = 'Yes, I can confirm that @FlamingPalmPunch is a noob!'
+   	msg = 'Yes, I can confirm that @FlamingPalmPunch#0344 is a noob!'
    	await client.send_message(message.channel, msg)
 
 
