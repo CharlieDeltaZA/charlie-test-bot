@@ -6,7 +6,6 @@ import commands
 import datetime
 
 client = discord.Client()
-server = discord.Server()
 
 @client.event
 async def on_message(message):                                          # Indiv @events for every message command?
@@ -40,8 +39,8 @@ async def on_message(message):                                          # Indiv 
    	await client.send_message(message.channel, msg)
 
    if message.content.startswith('James is a noob'):									# Wonder if this will work?
-   	usr = await server.get_member_named('FlamingPalmPunch')
-   	msg = 'Yes, I can confirm that {usr.mention} is a noob!'
+   #	usr = await server.get_member_named('FlamingPalmPunch')
+   	msg = 'Yes, I can confirm that @FlamingPalmPunch is a noob!'
    	await client.send_message(message.channel, msg)
 
 
