@@ -34,10 +34,10 @@ async def on_message(message):                                          # Indiv 
       await client.send_message(message.author, msg)
 
    if message.content.startswith('!lul'):
-   	msg_og = '<:NotLikeThis:314339829385265153>'
+   	msg_og = '<:NotLikeThis:314339829385265153>'						# Repeat what will be :lol: (lul?) 5 times, you know, for the lulz
    	msg = (msg_og + '\n') * 5
    	await client.send_message(message.channel, msg)
-   	
+
 
 #@client.event
 #async def on_message(message):
