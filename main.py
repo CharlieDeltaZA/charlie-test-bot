@@ -27,25 +27,25 @@ async def on_message(message):                                          # Indiv 
       msg = 'Bish Bash Bosh!'
       await client.send_message(message.channel, msg, tts=True)
 
-@client.event
-async def on_message(message):
+#@client.event
+#async def on_message(message):
 #   if message.content.startswith('How do you feel, Bot?'):           # FUCKING SYNTAX GOD DAMNIT
-   if message.content == 'How do you feel, Bot?':
-      emoji = '\N{UPSIDE-DOWN FACE}'                                                    # erm
-      await client.add_reaction(message, emoji)
+#   if message.content == 'How do you feel, Bot?':
+#      emoji = '\N{UPSIDE-DOWN FACE}'                                                    # erm
+#      await client.add_reaction(message, emoji)
 
-@client.event
-async def on_message(message):                                       # Send a PM to the user with a list of commands sourced elsewhere & formatted
-   if message.content.startswith('!help'):
-      msg = commands.Help
-      await client.send_message(message.author, msg)
+#@client.event
+#async def on_message(message):                                       # Send a PM to the user with a list of commands sourced elsewhere & formatted
+#   if message.content.startswith('!help'):
+#      msg = commands.Help
+#      await client.send_message(message.author, msg)
 
 
-@client.event                                                           # Welcome new members to server
-async def on_member_join(member):
-   server = member.server
-   msg = 'Welcome {0.mention} to {1.name}!'
-   await client.send_message(server, msg.format(member, server))
+#@client.event                                                           # Welcome new members to server
+#async def on_member_join(member):
+#   server = member.server
+#   msg = 'Welcome {0.mention} to {1.name}!'
+#   await client.send_message(server, msg.format(member, server))
 
         
 
