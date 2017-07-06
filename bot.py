@@ -64,7 +64,7 @@ async def on_ready():
    print(client.user.id)
    print(DateTime.strftime("%Y-%m-%d %H:%M:%S"))                                                 # Debugging
    print('----------')
-   await client.change_presence(game=discord.Game(name='with code'))   # Dis works 
+   await client.change_presence(game=discord.Game(name='with code | !help'))   # Dis works 
 
 
 client.run(credentials.Token)                                           # Run the client with the token
