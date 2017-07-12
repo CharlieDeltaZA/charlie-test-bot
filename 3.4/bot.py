@@ -42,7 +42,7 @@ def on_message(message):                                          # Indiv @event
      msg = (msg_og + '\n') * 5
      yield from client.send_message(message.channel, msg)
 
-  if message.content.startswith('*movie'):
+  if message.content.startswith('*movie'):                        # Unable to test due to tmdbsimple failing to install. Great.
      tmdb.API_KEY = (credentials.tmdb_API)
      movie = tmdb.movie(603)
      response = movie.info()
