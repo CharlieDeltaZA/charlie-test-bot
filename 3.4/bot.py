@@ -28,24 +28,24 @@ client = discord.Client()
       msg = 'Bish Bash Bosh!'
       yield from client.send_message(message.channel, msg, tts=True)
 
-   if message.content == 'How do you feel, Bot?':						#FeelsBadMan
+   if message.content == 'How do you feel, Bot?':                 #FeelsBadMan
       emoji = '\N{UPSIDE-DOWN FACE}'                                                    # erm
       yield from client.add_reaction(message, emoji)
 
-   if message.content.startswith('*help'):								# Send a PM to the user with a list of commands sourced elsewhere & formatted
+   if message.content.startswith('*help'):                        # Send a PM to the user with a list of commands sourced elsewhere & formatted
       msg = commands.Help
       yield from client.send_message(message.author, msg)
 
    if message.content.startswith('*lul'):
-   	msg_og = '<:NotLikeThis:314339829385265153>'						# Repeat what will be :lol: (lul?) 5 times, you know, for the lulz
-   	msg = (msg_og + '\n') * 5
+      msg_og = '<:NotLikeThis:314339829385265153>'                # Repeat what will be :lol: (lul?) 5 times, you know, for the lulz
+      msg = (msg_og + '\n') * 5
       yield from client.send_message(message.channel, msg)
 
-   '''if message.content.startswith('James is a noob'):									# Wonder if this will work?
-   	usr = client.get_all_members()
-   	print(usr)
-   	msg = 'Yes, I can confirm that {} is a noob!'
-   	await client.send_message(message.channel, msg)'''
+   '''if message.content.startswith('James is a noob'):                          # Wonder if this will work?
+      usr = client.get_all_members()
+      print(usr)
+      msg = 'Yes, I can confirm that {} is a noob!'
+      await client.send_message(message.channel, msg)'''
 
 
 #@client.event
