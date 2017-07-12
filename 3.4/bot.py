@@ -11,7 +11,7 @@ client = discord.Client()
 
 @client.event
 @asyncio.coroutine
-  def on_message(message):                                          # Indiv @events for every message command?
+def on_message(message):                                          # Indiv @events for every message command?
    # Bot must not respond to itself
   if message.author == client.user:
      return
@@ -54,7 +54,7 @@ client = discord.Client()
 
 @client.event                                                           # Welcome new members to server
 @asyncio.coroutine
-  def on_member_join(member):
+def on_member_join(member):
   server = member.server
   msg = 'Welcome {0.mention} to {1.name}!'
   yield from client.send_message(server, msg.format(member, server))
@@ -62,7 +62,7 @@ client = discord.Client()
 
 @client.event                                                           # Debug text
 @asyncio.coroutine
-  def on_ready():
+def on_ready():
   DateTime = datetime.datetime.now()
   print('Logged in as')
   print(client.user.name)
