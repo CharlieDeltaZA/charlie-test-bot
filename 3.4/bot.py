@@ -41,11 +41,11 @@ def on_message(message):                                          # Indiv @event
      msg = (msg_og + '\n') * 5
      yield from client.send_message(message.channel, msg)
 
-   '''if message.content.startswith('James is a noob'):                          # Wonder if this will work?
-      usr = client.get_all_members()
-      print(usr)
-      msg = 'Yes, I can confirm that {} is a noob!'
-      await client.send_message(message.channel, msg)'''
+#   '''if message.content.startswith('James is a noob'):                          # Wonder if this will work?
+#      usr = client.get_all_members()
+#      print(usr)
+#      msg = 'Yes, I can confirm that {} is a noob!'
+#      await client.send_message(message.channel, msg)'''
 
 
 #@client.event
