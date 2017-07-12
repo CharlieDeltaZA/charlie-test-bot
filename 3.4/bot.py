@@ -29,7 +29,7 @@ def on_message(message):                                          # Indiv @event
      yield from client.send_message(message.channel, msg, tts=True)
 
   if message.content == 'How do you feel, Bot?':                 #FeelsBadMan
-     emoji = '\N{UPSIDE-DOWN FACE}'                                                    # erm
+     emoji = '<:NotLikeThis:314339829385265153>'                                                    # erm   [\N{UPSIDE-DOWN FACE}]
      yield from client.add_reaction(message, emoji)
 
   if message.content.startswith('*help'):                        # Send a PM to the user with a list of commands sourced elsewhere & formatted
