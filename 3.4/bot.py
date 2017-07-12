@@ -6,6 +6,7 @@ import credentials
 import commands
 import datetime
 import asyncio
+import tmdbsimple as tmdb
 
 client = discord.Client()
 
@@ -41,6 +42,13 @@ def on_message(message):                                          # Indiv @event
      msg = (msg_og + '\n') * 5
      yield from client.send_message(message.channel, msg)
 
+  if message.content.startswith('*movie'):
+     tmdb.API_KEY = (credentials.tmdb_API)
+     movie = tmdb.movie(603)
+     response = movie.info()
+     msg = movie.title
+     yield from client.send_message(message.channel, msg)
+
 #   '''if message.content.startswith('James is a noob'):                          # Wonder if this will work?
 #      usr = client.get_all_members()
 #      print(usr)
@@ -69,7 +77,7 @@ def on_ready():
   print(client.user.id)
   print(DateTime.strftime("%Y-%m-%d %H:%M:%S"))                                                 # Debugging
   print('----------')
-  yield from client.change_presence(game=discord.Game(name='with code | !help'))   # Dis works 
+  yield from client.change_presence(game=discord.Game(name='with old code | *help'))   # Dis works 
 
 
 client.run(credentials.Token)                                           # Run the client with the token
